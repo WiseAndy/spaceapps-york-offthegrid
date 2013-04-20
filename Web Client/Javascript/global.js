@@ -79,6 +79,31 @@ var ƒ = {};
 				}
 		}
 		
+		/*
+		* Based on YUI namespace & code by Douglas Crockford: Now chainable and paths can be expressed. Lint enforced - all namespaces must start with a capital letter.
+		*       USED LIKE: 
+		*       ƒ.namespace("Collections");
+		*       ƒ.Collections.Stack = function(){};
+		*       
+		*       ƒ.namespace("Collections.ADT").Stack = function(){};
+		*/
+		root.namespace = function(_name){
+			if(typeof _name === "string"){
+				var expressedNamespaces = _name.split('.');
+				for(var i = 0; i < expressedNamespaces.length; i++){
+					var name = expressedNamespaces[i];
+					name = name.charAt(0).toUpperCase() + name.slice(1);
+					if(!root[name]){
+							root[name] = {};
+					}
+					root = root[name];
+				}
+				return root;
+			} else {
+				throw "Parameter 1: name, expected string";
+			}
+        }
+	
 		return root;
 	}
 })();
