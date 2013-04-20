@@ -64,10 +64,19 @@ textarea {
 body {
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 }
+h1 {font-family: 'Shanti', Helvetica, Arial, sans-serif;}
 
 section {margin: 0; margin-top: -1.5em; min-height:600px;}
 section h1, .content {
     margin-left: 250px;
+}
+
+.logo {
+    width:40px; height:40px;
+    padding-top:5px;
+}
+.logo img {
+    max-width: 100%;
 }
 
 #footprint-cta {
@@ -84,15 +93,26 @@ section h1, .content {
     font-size: 6.5em;
     margin: 0;
     margin-top: 1.5em;
+    font-weight: normal;
+    letter-spacing:-0.05em;
+    background-image: url('../img/cucumbr-small.png');
+    background-repeat: no-repeat;
+    background-position:68% 0em;
+}
+
+.search {
+    position: absolute;
+    top: 1em; left: 40%;
+    background: transparent;
 }
 
 .useraction {
     position: absolute;
-    top: 2em; right: 3em;
+    top: 1em; right: 3em;
     background: transparent;
 }
 .useraction a{
-    padding: 0.5em 1em;
+    padding: 0.3em 1em;
     border-radius: 0.4em;
     color: white;
     text-decoration: none;
@@ -119,10 +139,37 @@ section h1, .content {
     font-size: 2em;
 }
 
+.newsfeed header {
+    background: #003500;
+    height:50px;
+    margin: 0;
+}
+.newsfeed-container {
+    min-width: 40em;
+    max-width: 45em;
+    margin: 0 auto;
+}
 
+.newsfeed-container section {
+    min-height:0;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+}
 
-
-
+.newsitem h1 {
+    text-align: left;
+    margin: 0;
+}
+.newsitem h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+.newsitem img {
+    max-width: 100%;
+    float: left;
+    margin-right: 1em;
+}
 
 /* ==========================================================================
    Media Queries
