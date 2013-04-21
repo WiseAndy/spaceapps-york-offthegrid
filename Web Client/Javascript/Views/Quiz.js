@@ -1,6 +1,6 @@
 var A = ƒ;
 (function(root){
-	root.namespace("Models").Quiz = Backbone.View.extend({
+	root.namespace("Views").Quiz = Backbone.View.extend({
 		collection: root.Models.Quiz,
 		template: root.Templates.Quiz,
 		render: function(){

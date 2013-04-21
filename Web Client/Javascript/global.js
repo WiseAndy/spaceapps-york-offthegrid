@@ -93,12 +93,13 @@ var ƒ = {};
 				for(var i = 0; i < expressedNamespaces.length; i++){
 					var name = expressedNamespaces[i];
 					name = name.charAt(0).toUpperCase() + name.slice(1);
-					if(!root[name]){
-							root[name] = {};
+					var m = root;
+					if(!m[name]){
+							m[name] = {};
 					}
-					root = root[name];
+					m = m[name];
 				}
-				return root;
+				return m;
 			} else {
 				throw "Parameter 1: name, expected string";
 			}
