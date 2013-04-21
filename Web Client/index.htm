@@ -16,7 +16,20 @@
 		<script type="text/javascript" src="Javascript/Views/Quiz.js"></script>
 
 		<script type="text/javascript">
-		//get hold of any global functions in global.js object by using ALT+159 and the reference i.e. ƒ.isNull(a);
+		//get hold of any global functions in global.js object by using ALT+159 and the reference i.e. OTG.isNull(a);		
+		(function(){
+			OTG.namespace('Data').quiz = new OTG.Models.Quiz;
+			setTimeout(function(){ //step out of current render thread
+				//Fetch all data, this should be done async with a pool based signaling given more time
+				$.getJSON('questions.php', function(questions){
+					$.getJSON('choices.php', function(choices){
+						for(var i = 0; i < questions.length; i++){
+							OTG.Data.quiz.add(new OTG.Models.Question(questions[i]));						
+						}
+					});
+				});
+			},0);
+		})();	
 		</script>
 	</HEAD>
 	<BODY>

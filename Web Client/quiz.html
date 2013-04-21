@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Shanti' rel='stylesheet' type='text/css'>
+
+        <!--[if lt IE 9]>
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+		
+		<script type="text/javascript" src="Javascript/Frameworks/jquery/jquery.js"></script>
+		<script type="text/javascript" src="Javascript/Frameworks/jquery-ui/jquery-ui.js"></script>
+		<script type="text/javascript" src="Javascript/Frameworks/underscore/underscore.js"></script>
+		<script type="text/javascript" src="Javascript/Frameworks/backbone/backbone.js"></script>
+		
+		<!-- Required Utilities -->
+		<script type="text/javascript" src="Javascript/global.js"></script>
+		
+		<!-- System Objects -->
+		<script type="text/javascript" src="Javascript/Models/Question.js"></script>
+		<script type="text/javascript" src="Javascript/Models/Quiz.js"></script>
+		<script type="text/javascript" src="Templates/underscore/Quiz.js"></script>
+		<script type="text/javascript" src="Javascript/Views/Quiz.js"></script>
+
+		<script type="text/javascript">
+		//get hold of any global functions in global.js object by using ALT+159 and the reference i.e. OTG.isNull(a);		
+		(function(){
+			OTG.namespace('Data').quiz = new OTG.Models.Quiz;
+			setTimeout(function(){ //step out of current render thread
+				//Fetch all data, this should be done async with a pool based signaling given more time
+				$.getJSON('questions.php', function(questions){
+					$.getJSON('choices.php', function(choices){
+						for(var i = 0; i < questions.length; i++){
+							questions[i].choices = [];
+							OTG.Data.quiz.add(new OTG.Models.Question(questions[i]));
+						}
+						for(var i = 0; i < choices.length; i++){
+							var m = OTG.Data.quiz.get(choices[i].question_id).get("choices");
+							m.push(choices[i]);
+							OTG.Data.quiz.get(choices[i].question_id).set("choices", m);
+						}
+					});
+				});
+			},0);
+		})();
+		</script>
+
+		
+    </head>
+    <body class="homepage">
+        <header>
+                    <h1><img src="img/cucumbr-tiny.png" />Cucumbr</h1>
+                   <div class="useraction">
+                    <a href="profile.html" id="user-thumb">
+                        <img src="http://placehold.it/50x50&text=Profile" />
+                    </a>
+                    <a href="profile.html" id="user-name">Hi, John!</a>
+            </div>
+        </header>
+
+        <section id="quiz-intro">
+            <h1>Calculate your footprint</h1>
+
+            <article>
+                <p>This questionnaire will assess your environmental footprint, focusing on several key areas of your lifestyle.</p>
+
+                <p>When you're done, you can share you results, and you'll get useful tips to help improve any problem areas.</p>
+
+                <p>Come back later to update your answers - your results will be saved for next time so you can track your progress.</p>
+            </article>
+
+            <div align="center"><a href="#quiz-q1" class="more">First question.</a></div>
+
+        </section>
+
+        <section id="quiz-q1" class="quiz-question">
+            <article>
+            <h1>Question 1</h1>
+            <h2 class="quiz-cat">Energy</h2>
+        <p>Below is a list of energy saving features. Please check all that apply.</p>
+
+<form>
+    <input type="checkbox" name="q1-a1" value=""> Compact fluorescent bulbs<br />
+    <input type="checkbox" name="q1-a2" value=""> Energy efficient appliances<br />
+    <input type="checkbox" name="q1-a3" value=""> Extra insulation<br />
+    <input type="checkbox" name="q1-a4" value=""> Insulating blinds<br />
+    <input type="checkbox" name="q1-a5" value=""> Solar panels<br />
+    <input type="checkbox" name="q1-a6" value=""> Storm doors and windows<br />
+    <input type="checkbox" name="q1-a7" value=""> Water saving fixtures
+</form>
+</article>
+
+            <div align="center"><a href="#quiz-q2" class="more">Next question.</a></div>
+
+        </section>
+
+        <section id="quiz-q2" class="quiz-question">
+            <article>
+            <h1>Question 2</h1>
+            <h2 class="quiz-cat">Energy</h2>
+        <p>Below is a list of energy saving habits. Please check all that apply.</p>
+
+<form>
+
+    <input type="checkbox" name="q2-a1" value=""> Turn off lights when leaving rooms<br />
+    <input type="checkbox" name="q3-a2" value=""> Use power strips to turn off stand-by lights<br />
+    <input type="checkbox" name="q4-a3" value=""> Turn off computers and monitors when not in use<br />
+    <input type="checkbox" name="q5-a4" value=""> Dry clothes outside whenever possible<br />
+    <input type="checkbox" name="q6-a5" value=""> Keep thermostat relatively low in winter<br />
+    <input type="checkbox" name="q7-a6" value=""> Unplug small appliances when not in use<br />
+    <input type="checkbox" name="q8-a7" value=""> Minimal use of power equipment when landscaping
+</form>
+</article>
+
+            <div align="center"><a href="#quiz-results" class="more">See results!</a></div>
+
+        </section>
+
+        <section id="quiz-results">
+            <article class="content">
+                <h2>Thanks!</h2>
+
+                <p><em>Your score is:</em></p>
+                    <h1 class="logo" >48%</h2>
+            <p><a class="endbutton" href="profile.html" title="Calculate your footprint now">Go to your profile</a></p>
+
+            <p><a class="endbutton" href="#quiz-q1" title="recent off-the-grid news">Update your answers</a></p>
+
+            </article>
+
+        </section>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

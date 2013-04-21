@@ -1,4 +1,4 @@
-var A = ƒ;
+var A = OTG;
 (function(root){
 	root.namespace("Views").Quiz = Backbone.View.extend({
 		collection: root.Models.Quiz,

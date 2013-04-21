@@ -1,7 +1,7 @@
-var ƒ = {};
+var OTG = {};
 (function(){
 
-	ƒ = generate_locals();
+	OTG = generate_locals();
 
 	function generate_locals(){
 		var root = {};
@@ -82,10 +82,10 @@ var ƒ = {};
 		/*
 		* Based on YUI namespace & code by Douglas Crockford: Now chainable and paths can be expressed. Lint enforced - all namespaces must start with a capital letter.
 		*       USED LIKE: 
-		*       ƒ.namespace("Collections");
-		*       ƒ.Collections.Stack = function(){};
+		*       OTG.namespace("Collections");
+		*       OTG.Collections.Stack = function(){};
 		*       
-		*       ƒ.namespace("Collections.ADT").Stack = function(){};
+		*       OTG.namespace("Collections.ADT").Stack = function(){};
 		*/
 		root.namespace = function(_name){
 			if(typeof _name === "string"){

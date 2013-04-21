@@ -1,4 +1,4 @@
-var A = ƒ;
+var A = OTG;
 (function(root){
 	root.namespace("Models").Quiz = Backbone.Collection.extend({
 		model: root.Models.Question

@@ -1,4 +1,4 @@
-var A = ƒ;
+var A = OTG;
 (function(root){
 	'use strict';
 	root.namespace("Models").Question = Backbone.Model.extend({
