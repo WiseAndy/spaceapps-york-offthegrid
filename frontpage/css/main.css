@@ -1,7 +1,7 @@
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
-*{box-sizing:border-box;}
+* {box-sizing: border-box;}
 
 html,
 button,
@@ -64,10 +64,19 @@ textarea {
 body {
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 }
+h1 {font-family: 'Shanti', Helvetica, Arial, sans-serif;}
 
 section {margin: 0; margin-top: -1.5em; min-height:600px;}
 section h1, .content {
     margin-left: 250px;
+}
+
+.logo {
+    width:40px; height:40px;
+    padding-top:5px;
+}
+.logo img {
+    max-width: 100%;
 }
 
 #footprint-cta {
@@ -84,23 +93,45 @@ section h1, .content {
     font-size: 6.5em;
     margin: 0;
     margin-top: 1.5em;
+    font-weight: normal;
+    letter-spacing:-0.05em;
+    background-image: url('../img/cucumbr-small.png');
+    background-repeat: no-repeat;
+    background-position:68% 0em;
+}
+
+.search {
+    position: absolute;
+    top: 1em; left: 40%;
+    background: transparent;
 }
 
 .useraction {
     position: absolute;
-    top: 2em; right: 3em;
+    top: 0; right: 0;
     background: transparent;
+    width:12em;
 }
 .useraction a{
-    padding: 0.5em 1em;
+    padding: 0.3em 1em;
     border-radius: 0.4em;
     color: white;
     text-decoration: none;
+    position: relative;
+    top: 1em;
 }
 .useraction a:hover {
     box-shadow: 1px 1px 3px #444}
 #login {background:#3333FF;}
 #signup {background:#33CC33;}
+
+.useraction #user-name,
+.useraction #user-thumb {
+    color: #FFFFF0;;
+    padding: 0;
+    top: 0;
+}
+
 
 #page1 {
     background: #fff;
@@ -119,10 +150,49 @@ section h1, .content {
     font-size: 2em;
 }
 
+.newsfeed header {
+    background: #003500;
+    height:50px;
+    margin: 0;
+    position:fixed;
+    top:0; left: 0; right: 0;
+}
+.newsfeed-container {
+    min-width: 40em;
+    max-width: 45em;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: rgba(232,218,217,0.5);
+}
 
+.newsfeed-container section {
+    min-height:0;
+    margin: 0;
+    display: inline-block;
+    background: #FFFFF0;
+    margin: 1% .5em;
+    padding: 0.5em 1% 1.5em 1%;
+    border-radius: .4em;
+    width: 96%;
+}
 
-
-
+.newsitem h1 {
+    text-align: left;
+    margin: 0;
+    font-weight: normal;
+}
+.newsitem h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+.newsitem h1 a:hover {
+    text-decoration: underline;
+}
+.newsitem img {
+    max-width: 100%;
+    float: left;
+    margin-right: 1em;
+}
 
 /* ==========================================================================
    Media Queries
