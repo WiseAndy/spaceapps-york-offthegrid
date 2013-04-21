@@ -18,26 +18,23 @@
     </head>
     <body class="newsfeed">
     <header>
-        <div class="logo"><a href="index.html"><img src="img/cucumbr-small.png"/></a></div>
-
-        <div class="search">
-            <form>
-                <input type="text" name="search" placeholder="Search"/>
-            </form>
-        </div>
+            <h1><img src="img/cucumbr-tiny.png" />Cucumbr</h1>
 
         <div class="useraction ">
+            
             <a href="#" title="Login" id="login">Login</a> <a href="#" title="Signup" id="signup">Signup</a>
+
         </div>
 
     </header>
     <div class="newsfeed-container">
+        <h2>Recent news</h2>
 
         <!-- article template -->
         <section class="newsitem">
-            <h1><a href="http://www.treehugger.com">Article title</a></h1>
-            <p><img class="articlethumb" src="http://placehold.it/300x160/444"/>Description</p>
-            <p><a href="http://www.treehugger.com">Read more...</a></p>
+            <h1><a href="http://www.wired.com/reviews/2013/04/lapka/">Review: Lapka Personal Environment Monitor</a></h1>
+            <p><img class="articlethumb" src="img/articlethumb.jpg"/>We’re already carrying enough sensors to report our locations, record videos on the go, and measure the inner workings of our bodies. So the next step seems only natural — tracking the quality of the environment around us, from the air we breathe to the food we eat.</p>
+            <p><a href="http://www.wired.com/reviews/2013/04/lapka/">Read more...</a></p>
             
         </section>
 
@@ -46,7 +43,12 @@
             <h1><a href="https://www.youtube.com/watch?feature=player_embedded&v=TbU-cDLQ0Yw">How does the emission trading scheme work? </a></h1>
             <p>Emission trading scheme? Cap and trade? What do these words mean? And how does it all contribute to reduced emissions of greenhouse gases? This animation shows how the scheme works.</p>
             <iframe src="http://www.youtube.com/embed/TbU-cDLQ0Yw" frameborder="0" allowfullscreen></iframe>
-        </section>  
+        </section>
+
+            <section class="twitter">
+                <a class="twitter-timeline"  href="https://twitter.com/search?q=%23offthegrid"  data-widget-id="325913541108441088">Tweets about "#offthegrid"</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </section>
 
 
     </div>
@@ -62,19 +64,18 @@
   });
   </script>
 
-<!-- TODO - fix this -->
   <script>
   $(document).ready(function(){
  
     $("#login").click(function(event){       
         event.preventDefault();
         $('.useraction')
-        .html('<div class="useraction">
+        .html('            <div class="useraction">
                     <a href="profile.html" id="user-name">John Smith</a>
                     <a href="profile.html" id="user-thumb">
                         <img src="http://placehold.it/50x50" />
                     </a>
-                </div> ');
+                </div>');
     });
 });     
 </script>

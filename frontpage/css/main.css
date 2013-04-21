@@ -66,29 +66,7 @@ body {
 }
 h1 {font-family: 'Shanti', Helvetica, Arial, sans-serif;}
 
-section {margin: 0; margin-top: -1.5em; min-height:600px;}
-section h1, .content {
-    margin-left: 250px;
-}
-
-.logo {
-    width:40px; height:40px;
-    padding-top:5px;
-}
-.logo img {
-    max-width: 100%;
-}
-
-#footprint-cta {
-    width: 230px;
-    padding: 10px;
-    position: fixed;
-    top: 2em;
-    background: #f0f0f0;
-    border-radius: 0.4em;
-}
-
-#page1 h1 {
+h1.logo {
     text-align: center;
     font-size: 6.5em;
     margin: 0;
@@ -100,9 +78,49 @@ section h1, .content {
     background-position:68% 0em;
 }
 
+section {margin: 0; margin-top: -1.5em; min-height:600px; padding-bottom: 2em;}
+section h1, 
+.content {
+    margin-left: 250px; 
+}
+.content {
+    width: 25em;
+    font-size: 130%;
+}
+
+.homepage article {
+    margin-left: 250px;
+    margin-right: 2cm;
+    width: 400px;
+}
+
+
+#footprint-cta {
+    width: 190px;
+    padding: 30px 10px;
+    margin-left: 10px;
+    position: fixed;
+    top: 2em;
+    font-family: 'Shanti', Helvetica, Arial, sans-serif;
+    font-size:1.8em;
+    text-align: center;
+    border-radius: 20px;
+    background-image:url('../img/earth.png');
+    background-repeat: no-repeat;
+    background-color: #454545;
+    background-position: 5px 5px;
+}
+#footprint-cta a {
+    text-decoration: none;
+    color: #fffff0;
+    text-shadow: 1px 2px 3px #454545;
+}
+
+
+
 .search {
     position: absolute;
-    top: 1em; left: 40%;
+    top: 0.8em; left: 40%; right: 40%;
     background: transparent;
 }
 
@@ -112,7 +130,12 @@ section h1, .content {
     background: transparent;
     width:12em;
 }
-.useraction a{
+.userprofile .useraction {
+    left:0; right: auto;
+}
+.useraction a,
+#statslink,
+.endbutton {
     padding: 0.3em 1em;
     border-radius: 0.4em;
     color: white;
@@ -120,42 +143,90 @@ section h1, .content {
     position: relative;
     top: 1em;
 }
-.useraction a:hover {
+.useraction a:hover,
+#statslink:hover,
+.endbutton:hover {
     box-shadow: 1px 1px 3px #444}
-#login {background:#3333FF;}
-#signup {background:#33CC33;}
+#login {background:#228B22;}
+#signup, #statslink, .endbutton {background:#007FFF;}
 
 .useraction #user-name,
 .useraction #user-thumb {
-    color: #FFFFF0;;
+    color: #223322;
     padding: 0;
     top: 0;
 }
 
+#statslink {
+    position: absolute;
+    right: 1em; top: 0.5em;
+}
+.endbutton {
+
+}
+
 
 #page1 {
-    background: #fff;
+    background: #fffff0;
+    
 }
 #page2 {
-    background:#33f;
+    background:#B22222;
     color: white;
 }
 #page3 {
-    background:#3c3;
+    background:#ED9121;
     color: white;
 }
 
+#page4 {
+    background: #228B22;
+    color: white;
+    }
+
+#page5 {
+    background: #007FFF;
+    color: white;
+    }
+    
 .more {
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.5em;
+    text-align: center;
+    width: 450px;
+    background: #334488;
+    display: block;
+    color: #fffff0;
+    margin-top: 4em;
+    border-radius: .4em;
+}
+.more:after {
+    content: url('../img/morelink.png');
+    position: relative;
+    top: -.1em;
+    display: block;
+    line-height: 1;
+    padding: 0; margin: 0;
+
 }
 
-.newsfeed header {
-    background: #003500;
+header {
+    background: #cde8cf;
     height:50px;
     margin: 0;
     position:fixed;
     top:0; left: 0; right: 0;
+    text-align: center;
+    z-index: 10;
+}
+.newsfeed header {
+    text-align: left;
+}
+header h1 {
+    line-height:1;
+    margin: 0;
+    padding: 0.2em;
+    color: #223322;
 }
 .newsfeed-container {
     min-width: 40em;
@@ -192,6 +263,60 @@ section h1, .content {
     max-width: 100%;
     float: left;
     margin-right: 1em;
+}
+
+.userinfo {
+    width: 250px;
+    min-height: 300px;
+    position: fixed;
+    top: 70px;
+    background-image: url('../img/userinfo.png');
+    background-repeat: no-repeat;
+}
+.usershare {
+    position: fixed;
+    top: 370px;
+    padding-left: 1em;
+    font-size:1.2em;
+}
+
+
+.userfeed {
+    position:absolute;
+    left: 260px; top: 90px;
+    max-width: 690px;
+    background: #ebecea;
+    padding: 5px 0.5em;
+    border-radius: 0.4em;
+}
+
+.usertip {
+    font-size: 1.4em;
+    font-family: 'Shanti', Helvetica, Arial, sans-serif;
+    padding: 1em 2em 2.5em 1em;
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    border-bottom: 1px solid #d0d0d0;
+}
+.userfeed article {
+    padding-bottom:2em;
+    background-color: #fffff0;
+    border-radius: 0.4em;
+    margin-bottom: 1em;
+}
+#twitter-widget-0 {
+    margin: 1em 3em;
+}
+.ads {
+    text-align: center;
+    padding-top: 1em;
+
+}
+
+em {
+    font-size: 1.7em;
+    font-style: normal;
+    font-family: 'Shanti', Helvetica, Arial, sans-serif;
 }
 
 /* ==========================================================================
